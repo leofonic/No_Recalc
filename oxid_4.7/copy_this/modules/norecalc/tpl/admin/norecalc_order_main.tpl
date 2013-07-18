@@ -63,17 +63,20 @@ function ThisDate( sID)
                 [{ oxmultilang ident="ORDER_MAIN_BILLNUM" }]
                 </td>
                 <td class="edittext">
-                <input type="text" class="editinput" size="15" maxlength="[{$edit->oxorder__oxbillnr->fldmax_length}]" name="editval[oxorder__oxbillnr]" value="[{$edit->oxorder__oxbillnr->value }]" [{ $readonly }]>
-                [{ oxinputhelp ident="HELP_ORDER_MAIN_BILLNUM" }]
+                [{$edit->oxorder__oxbillnr->value }]
                 </td>
             </tr>
             <tr>
                 <td class="edittext">
-                [{ oxmultilang ident="ORDER_MAIN_DISCOUNT" }]
+                [{ oxmultilang ident="ORDER_MAIN_BILLDATE" }]
                 </td>
                 <td class="edittext">
-                [{$edit->oxorder__oxdiscount->value }]
-                [{ oxinputhelp ident="HELP_ORDER_MAIN_DISCOUNT" }]
+                [{$edit->oxorder__oxbilldate->value }]
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <input type="submit" class="edittext" name="resetinvoice" id="resetinvoice" onclick="document.myedit.fnc.value='resetinvoice';document.myedit.submit();return false;" value="&nbsp;&nbsp;[{ oxmultilang ident="ORDER_MAIN_RESETINVOICE" }]&nbsp;&nbsp;">
                 </td>
             </tr>
             [{foreach from=$aVouchers item=sVoucher}]
