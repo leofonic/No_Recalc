@@ -25,7 +25,7 @@ class norecalc_order_main extends norecalc_order_main_parent
         $aParams = oxConfig::getParameter( "editval" );
         
         //No Invoice generated yet, recalculate order and save
-        if (!$this->hasInvoice() && !$aParams['oxorder__oxbillnr']){
+        if (!$this->hasInvoice() && !$aParams['oxorder__oxbillnr'] && !$aParams['oxorder__oxpaid']){
             return parent::save();
         }
         
