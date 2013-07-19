@@ -22,15 +22,16 @@ class norecalc_order_main extends norecalc_order_main_parent
     }
     public function save()
     {
+        $aParams = oxConfig::getParameter( "editval" );
+        
         //No Invoice generated yet, recalculate order and save
-        if (!$this->hasInvoice()){
+        if (!$this->hasInvoice() && !$aParams['oxorder__oxbillnr']){
             return parent::save();
         }
         
         //invoice already generated, just save without recalculation
         $oOrder = oxNew( "oxorder" );
         if ( $oOrder->load( $this->getEditObjectId() ) ) {
-            $aParams = oxConfig::getParameter( "editval" );
             $oOrder->assign( $aParams);
             $oOrder->save();
         }

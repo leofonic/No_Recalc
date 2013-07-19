@@ -59,12 +59,22 @@ function ThisDate( sID)
                 </td>
             </tr>
             <tr>
+            [{ if $edit->oxorder__oxbillnr->value }]
                 <td class="edittext">
                 [{ oxmultilang ident="ORDER_MAIN_BILLNUM" }]
                 </td>
                 <td class="edittext">
                 [{$edit->oxorder__oxbillnr->value }]
                 </td>
+            [{ else }]
+                <td class="edittext">
+                [{ oxmultilang ident="ORDER_MAIN_BILLNUM" }]
+                </td>
+                <td class="edittext">
+                <input type="text" class="editinput" size="15" maxlength="[{$edit->oxorder__oxbillnr->fldmax_length}]" name="editval[oxorder__oxbillnr]" value="[{$edit->oxorder__oxbillnr->value }]" [{ $readonly }]>
+                [{ oxinputhelp ident="HELP_ORDER_MAIN_BILLNUM" }]
+                </td>
+            [{ /if }]
             </tr>
             <tr>
                 <td class="edittext">
