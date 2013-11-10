@@ -13,3 +13,5 @@ made, for example if payment date is set, and the order stored in Oxid is then n
 that was sent to the customer. With this module, after an invoice is generated, unrelated changes do not
 recalculate the order, and the possibilities to change the order in backend are limited so that there will be 
 no differences to the invoice that has been sent.
+
+The module is licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a>
