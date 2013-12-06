@@ -2,6 +2,7 @@ No_Recalc
 =========
 
 OXID eShop: Disables recalculation of orders when saved (e.g. if payment date is set), if invoice has been generated.
+Module for OXID eShop Version 4.7/4.8
 
 Temporary fix for bug https://bugs.oxid-esales.com/view.php?id=4624
 
