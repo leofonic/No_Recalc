@@ -22,7 +22,7 @@ class norecalc_order_main extends norecalc_order_main_parent
     }
     public function save()
     {
-        $aParams = oxConfig::getParameter( "editval" );
+        $aParams = oxRegistry::getConfig()->getRequestParameter( "editval" );
         //No Invoice generated yet, recalculate order and save
         if (!$this->hasInvoice() && !$aParams['oxorder__oxbillnr'] && ( !$aParams['oxorder__oxpaid'] || $aParams['oxorder__oxpaid'] == "0000-00-00 00:00:00" )){
             return parent::save();
